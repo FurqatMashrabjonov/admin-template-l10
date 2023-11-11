@@ -3,12 +3,12 @@
 namespace App\Livewire;
 
 use App\Models\User;
+use Filament\Tables\Actions\Action;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
-use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Livewire\Component;
@@ -34,13 +34,13 @@ class UsersList extends Component implements HasTable, HasForms
                         'draft' => 'Draft',
                         'reviewing' => 'Reviewing',
                         'published' => 'Published',
-                    ]),
-                Filter::make('is_admin')
-                    ->label('Administrators only?')
-                    ->indicator('Administrators')
+                    ])
             ])
             ->actions([
-                // ...
+                Action::make('edit')
+                    ->url(url('admin'))
+                    ->icon('heroicon-m-pencil-square')
+                    ->iconButton()
             ])
             ->bulkActions([
                 // ...
