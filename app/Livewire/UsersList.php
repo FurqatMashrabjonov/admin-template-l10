@@ -40,7 +40,10 @@ class UsersList extends Component implements HasTable, HasForms
                 Action::make('edit')
                     ->url(url('admin'))
                     ->icon('heroicon-m-pencil-square')
-                    ->iconButton()
+                    ->iconButton(),
+                Action::make('delete')
+                    ->action(fn (User $user) => $user->delete())
+                    ->requiresConfirmation()
             ])
             ->bulkActions([
                 // ...
