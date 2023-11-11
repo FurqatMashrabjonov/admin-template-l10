@@ -25,6 +25,7 @@
 
     <!-- Styles -->
     @livewireStyles
+    @filamentStyles
 
 </head>
 <!--end::Head-->
@@ -387,6 +388,7 @@
             <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                 <!--begin::Content wrapper-->
                 <div class="d-flex flex-column flex-column-fluid">
+                    @include('admin.components.toolbar')
                     <!--begin::Content-->
                     <div id="kt_app_content" class="app-content flex-column-fluid">
                         <!--begin::Content container-->
@@ -456,8 +458,8 @@
 <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
 <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
 <!--end::Global Javascript Bundle-->
-
 @livewireScripts
+@filamentScripts
 <!--end::Javascript-->
 </body>
 <!--end::Body-->
