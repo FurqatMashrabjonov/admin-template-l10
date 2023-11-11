@@ -448,7 +448,7 @@
 </div>
 <!--end::Scrolltop-->
 <!--begin::Modals-->
-
+@livewire('notifications')
 <!--begin::Javascript-->
 <script>var hostUrl = "assets/";</script>
 <!--begin::Global Javascript Bundle(mandatory for all pages)-->
