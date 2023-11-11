@@ -31,3 +31,7 @@ Route::middleware([
 Route::get('/admin', function (){
     return view('admin.dashboard');
 });
+
+
+Route::get('/route1', \App\Livewire\Page1::class);
+Route::get('/route2', \App\Livewire\Page2::class);
